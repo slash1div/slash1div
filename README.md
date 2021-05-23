@@ -1,4 +1,6 @@
 # Sup, this is where I store stuff I make.
+## Need to contact me?
+[Join my Discord](https://discord.gg/Y5UqMfXazT), I check there more than my email.
 ## Current projects:
 1. [slash's Theme Collection](https://github.com/slash1div/slash1div/tree/main/Themes/)
      - [ROBLOX](https://github.com/slash1div/slash1div/tree/main/Themes/ROBLOX) - **Will not be updated as much.** 
