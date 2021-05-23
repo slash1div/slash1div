@@ -1,4 +1,4 @@
-# A collection of BD Themes.
-## Get BD [here.](https://github.com/rauenzi/BetterDiscordApp/releases)
+# A collection of BetterDiscord Themes.
+## Get BetterDiscord [here.](https://github.com/rauenzi/BetterDiscordApp/releases)
 1. ??
      - ??
