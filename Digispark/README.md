@@ -6,6 +6,8 @@
 
 [A computer](https://i.ebayimg.com/images/g/kpIAAOSwhrRfxT2F/s-l300.jpg)
 
+[Digispark Drivers](https://github.com/digistump/DigistumpArduino/releases)
+
 [Arduino IDE](https://www.arduino.cc/en/software)
 
 ## Setup:
