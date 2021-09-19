@@ -1,3 +1,5 @@
+# **I AM NOT RESPONSIBLE TO ANY DAMAGE CAUSED BY THESE USBS. ANY USAGE WITH MALLICIOUS INTENT IS NOT CONDONED BY ME. ALL OF THESE USBS ARE MEANT FOR EDUCATIONAL PURPOSES.
+
 # Digispark USB Code
 ## Requirements:
 [Digispark USBs ($20 for 5)](https://www.amazon.com/AiTrip-Digispark-Kickstarter-Attiny85-Development/dp/B0836WXQQR)
