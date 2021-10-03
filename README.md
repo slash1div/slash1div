@@ -1,3 +1,4 @@
+![weezer shrine](https://images.nintendolife.com/e0f66909e4cc5/1280x720.jpg)
 # Sup, this is where I store stuff I make.
 ## Here's my website!
 [swaggy.one](https://swaggy.one/)
