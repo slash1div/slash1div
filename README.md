@@ -8,7 +8,7 @@
 * [Digispark USB Code](https://github.com/slash1div/slash1div/tree/main/Digispark)
 * [Junkyard (random junk)](https://github.com/slash1div/slash1div/tree/main/Junkyard)
 ## I helped make these:
-* [sableye](https://github.com/curiositlyxd/sableye)
+* [sableye](https://github.com/sableye-bot)
 ## What I'm currently listening to:
 
 
