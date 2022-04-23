@@ -45,4 +45,4 @@ SetProperty(workspace, "LevelOfDetail", Configuration["ModelLevelOfDetail"])
 SetProperty(workspace, "MeshPartHeads", Configuration["MeshPartHeads"])
 SetProperty(workspace, "InterpolationThrottling", Configuration["InterpolationThrottlingMode"])
 if syn then pcall(function() setfpscap(999) end) end
-end)) 1112
+end))
