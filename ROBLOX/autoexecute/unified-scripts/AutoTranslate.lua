@@ -2,6 +2,7 @@
     Message Translator
     Made by Aim, updated by cli
     Credits to Riptxde for the sending chathook
+    https://v3rmillion.net/showthread.php?tid=1128925
 
     Translates messages via Google Translate. 
     You can also speak in different languages by typing > followed by the language code or name. Ex: >es
