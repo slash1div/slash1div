@@ -2,6 +2,11 @@
     Message Translator
     Made by Aim, updated by cli
     Credits to Riptxde for the sending chathook
+
+    Translates messages via Google Translate. 
+    You can also speak in different languages by typing > followed by the language code or name. Ex: >es
+    Make sure when you translate that the message with > you put your actual message in a different chat.
+    To go back to saying your own messages, type >d.	
 --]]
 
 if not game['Loaded'] then game['Loaded']:Wait() end; repeat wait(.06) until game:GetService('Players').LocalPlayer ~= nil
@@ -269,13 +274,13 @@ local properties = {
     TextSize = 16;
 }
 
-game:GetService("StarterGui"):SetCore("SendNotification",
-    {
-        Title = "Chat Translator",
-        Text = "Ported to Google Translate",
-        Duration = 3
-    }
-)
+-- game:GetService("StarterGui"):SetCore("SendNotification",
+--     {
+--         Title = "Chat Translator",
+--         Text = "Ported to Google Translate",
+--         Duration = 3
+--     }
+-- )
                   
 properties.Text = "[TR] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 -- StarterGui:SetCore("ChatMakeSystemMessage", properties)
