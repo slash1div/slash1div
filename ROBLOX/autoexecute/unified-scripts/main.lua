@@ -33,5 +33,9 @@ if _G.graphicsenhancer == true then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/GraphicsEnhancer.lua'))()
 end
 
+if _G.fpsbooster == true then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/FPSBooster.lua'))()
+end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/AutoTranslate.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DiscordEmojis.lua", true))()
