@@ -1,0 +1,31 @@
+-- Chat text properties.
+local mainloaderprop = {
+    Color = Color3.new(1,1,0);
+    Font = Enum.Font.SourceSansItalic;
+    TextSize = 16;
+}
+
+-- Sending the information text.
+if _G.sendinfotext == true then
+	mainloaderprop.Text = "[Translator] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
+	StarterGui:SetCore("ChatMakeSystemMessage", mainloaderprop)
+	mainloaderprop.Text = "[ChatEmojis] To select emojis, type : then select emojis with the up and down arrow keys. To send the emoji, hit right shift."
+	StarterGui:SetCore("ChatMakeSystemMessage", mainloaderprop)
+end
+
+
+-- Loading the scripts
+if _G.darkchat == true then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DarkChat.lua", true))()
+end
+
+if _G.unfocusoptimizer == true then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/UnfocusOptimizer.lua", true))()
+end
+
+if _G.useadminscript == true then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/AutoTranslate.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DiscordEmojis.lua", true))()
