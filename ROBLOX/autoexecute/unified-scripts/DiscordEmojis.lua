@@ -1,3 +1,9 @@
+--[[
+   Chat Emoji Integration
+	Made by Yiffer
+   https://v3rmillion.net/showthread.php?tid=1014194
+--]]
+
 local insertKey = Enum.KeyCode.RightShift
 
 if not game:IsLoaded() then
