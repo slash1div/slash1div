@@ -8,9 +8,9 @@ local mainloaderprop = {
 -- Sending the information text.
 if _G.sendinfotext == true then
 	mainloaderprop.Text = "[Translator] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
-	StarterGui:SetCore("ChatMakeSystemMessage", mainloaderprop)
+	game:GetService('StarterGui'):SetCore("ChatMakeSystemMessage", mainloaderprop)
 	mainloaderprop.Text = "[ChatEmojis] To select emojis, type : then select emojis with the up and down arrow keys. To send the emoji, hit right shift."
-	StarterGui:SetCore("ChatMakeSystemMessage", mainloaderprop)
+	game:GetService('StarterGui'):SetCore("ChatMakeSystemMessage", mainloaderprop)
 end
 
 
