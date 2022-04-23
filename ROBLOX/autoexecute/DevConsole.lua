@@ -1,3 +1,9 @@
+--[[
+    Better dev console
+    Made by luatsuki
+    https://gist.github.com/luatsuki/a1b48e02d5710ebff8fe1ffb1fc5ea38
+--]]
+
 local Instance_new = Instance.new
 local UDim2_new = UDim2.new
 local Color3_new = Color3.new
