@@ -1,3 +1,9 @@
+--[[
+  Made by w a e
+  Increases graphics.
+  https://v3rmillion.net/showthread.php?tid=1016398
+--]]
+
 -- < Services > --
 local Lighting = game:GetService("Lighting")
 local NetworkSettings = settings():GetService("NetworkSettings")
