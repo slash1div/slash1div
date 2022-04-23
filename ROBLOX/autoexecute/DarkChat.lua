@@ -1,3 +1,7 @@
+--[[
+    Dark Chat Bubbles
+    Idk who made it, but it works good.
+--]]
 repeat game:GetService("RunService").RenderStepped:Wait() until game:IsLoaded()
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
