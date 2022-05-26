@@ -55,3 +55,4 @@ end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/AutoTranslate.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DiscordEmojis.lua", true))()
+game.CoreGui.ThemeProvider.TopBarFrame.LeftFrame.Button.Visible = False -- i hate the beta badge, it covers some game guis. this removes it.
