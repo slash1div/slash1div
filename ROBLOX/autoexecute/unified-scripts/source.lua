@@ -33,10 +33,6 @@ end
 
 
 -- Loading the scripts
-if _G.darkchat == true then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DarkChat.lua", true))()
-end
-
 if _G.unfocusoptimizer == true then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/UnfocusOptimizer.lua", true))()
 end
