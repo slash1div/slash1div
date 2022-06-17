@@ -4,13 +4,6 @@
 local Players, SGui = game:GetService("Players"), game:GetService("StarterGui");
 local Client, NColor3, UD, UD2 = Players.LocalPlayer, Color3.new, UDim.new, UDim2.new
 
-local function ChatSpy()
-   local ChatSpyFrame = Client.PlayerGui.Chat.Frame
-   ChatSpyFrame.ChatChannelParentFrame.Visible = true
-   ChatSpyFrame.ChatBarParentFrame.Position = ChatSpyFrame.ChatChannelParentFrame.Position + UD2(UD(), ChatSpyFrame.ChatChannelParentFrame.Size.Y)
-end -- brings back chat for games that remove it
---ChatSpy() -- but i dont care xaxa420
-
 getgenv().ShowHiddenMsg = function(T, C)
    SGui:SetCore("ChatMakeSystemMessage", {
        Text = T;
@@ -19,7 +12,7 @@ getgenv().ShowHiddenMsg = function(T, C)
 end
 getgenv().Spy = function(Target)
    Target.Chatted:Connect(function(Msg)
-       if string.find(Msg, "/e ") or string.find(Msg, "/w ") or string.find(Msg, "/whisper ") then
+       if string.sub(msg, 1,2) == "/e" or string.sub(msg,1,2) == "/w"  or string.sub(msg,1,2) == "/t" or string.sub(msg,1,8) == "/console" or string.sub(msg,1,5) == "/team" or string.sub(msg,1,8) == "/whisper" then
            ShowHiddenMsg("{CHATSPY}: ".."["..tostring(Target).."]: "..Msg, NColor3(255,255,255)) -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
        end
    end)
