@@ -2,20 +2,15 @@
     Dark Chat Bubbles
     Idk who made it, but it works good.
 --]]
-repeat game:GetService("RunService").RenderStepped:Wait() until game:IsLoaded()
+
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
-local Chat = game:GetService("Chat")
-local ChatSettings = require(Chat:WaitForChild("ClientChatModules"):WaitForChild("ChatSettings"))
-local ChatGui = Player:WaitForChild("PlayerGui"):WaitForChild("BubbleChat")
-ChatGui.DescendantAdded:Connect(function(ChatElement) -- OnBubbleChatDraw
-    if ChatElement.Name == "ChatBubble" then
-        ChatElement.ImageColor3 = Color3.fromRGB(30, 30, 30)
-    elseif ChatElement.Name == "ChatBubbleTail" then
-        ChatElement.ImageColor3 = Color3.fromRGB(30, 30, 30)
-    elseif ChatElement.Name == "BubbleText" then
-        ChatElement.TextColor3 = Color3.fromRGB(255, 255, 255)
-    elseif ChatElement.Name == "SmallTalkBubble" then
-        ChatElement.ImageColor3 = Color3.fromRGB(30, 30, 30)
-    end
+local PlayerGui = Player:WaitForChild("PlayerGui")
+local BubbleChatUI = PlayerGui:WaitForChild("BubbleChat")
+BubbleChatUI.DescendantAdded:Connect(function(Descendant)
+if Descendant:IsA("ImageLabel") then
+Descendant.ImageColor3 = Color3.fromRGB(59, 59, 59)
+elseif Descendant:IsA("TextLabel") then
+Descendant.TextColor3 = Color3.new(1,1,1)
+end
 end)
