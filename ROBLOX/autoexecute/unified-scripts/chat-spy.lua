@@ -12,7 +12,7 @@ getgenv().ShowHiddenMsg = function(T, C)
 end
 getgenv().Spy = function(Target)
    Target.Chatted:Connect(function(Msg)
-       if string.sub(msg, 1,2) == "/e" or string.sub(msg,1,2) == "/w"  or string.sub(msg,1,2) == "/t" or string.sub(msg,1,8) == "/console" or string.sub(msg,1,5) == "/team" or string.sub(msg,1,8) == "/whisper" then
+       if string.sub(msg, 1,2) == "/e" or string.sub(Msg,1,2) == "/w"  or string.sub(Msg,1,2) == "/t" or string.sub(Msg,1,8) == "/console" or string.sub(Msg,1,5) == "/team" or string.sub(Msg,1,8) == "/whisper" then
            ShowHiddenMsg("{CHATSPY}: ".."["..tostring(Target).."]: "..Msg, NColor3(255,255,255)) -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
        end
    end)
