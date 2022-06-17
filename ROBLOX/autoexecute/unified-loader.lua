@@ -7,6 +7,7 @@
 --]]
 
 _G.sendinfotext = true -- Puts info text into chat when you join.
+_G.inlinechatspy = true -- Shows whispers and team chats inside of the main roblox chat.
 _G.darkchat = true -- Makes bubble chat black.
 _G.unfocusoptimizer = true -- Reduces CPU and GPU usage when Roblox is unfocused. It also leaves a white screen when doing so.
 _G.useadminscript = false -- Executes Infinite Yeild. Would use CMDX but it's pretty dead.
