@@ -7,15 +7,15 @@ local Client, NColor3, UD, UD2 = Players.LocalPlayer, Color3.new, UDim.new, UDim
 getgenv().ShowHiddenMsg = function(T)
    SGui:SetCore("ChatMakeSystemMessage", {
        Text = T;
-       Color = Color3.new(1,1,0); -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
-       Font = Enum.Font.SourceSansLight;
+       Color = Color3.new(.5,1,0); -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
+       Font = Enum.Font.SourceSansItalic;
        TextSize = 16;
    })
 end
 getgenv().Spy = function(Target)
    Target.Chatted:Connect(function(Msg)
        if string.sub(Msg, 1,2) == "/e" or string.sub(Msg,1,2) == "/w"  or string.sub(Msg,1,2) == "/t" or string.sub(Msg,1,8) == "/console" or string.sub(Msg,1,5) == "/team" or string.sub(Msg,1,8) == "/whisper" then
-           ShowHiddenMsg("{CHATSPY}: ".."["..tostring(Target).."]: "..Msg)
+           ShowHiddenMsg("(CSPY) ".."["..tostring(Target).."]: "..Msg)
        end
    end)
 end
