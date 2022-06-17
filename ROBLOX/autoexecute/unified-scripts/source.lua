@@ -16,9 +16,9 @@
 
 -- Chat text properties.
 local mainloaderprop = {
-    Color = Color3.new(1,1,0);
-    Font = Enum.Font.SourceSansItalic;
-    TextSize = 16;
+	Color = Color3.new(1,1,0);
+	Font = Enum.Font.SourceSansItalic;
+	TextSize = 16;
 }
 
 -- Sending the information text.
@@ -42,18 +42,21 @@ if _G.unfocusoptimizer == true then
 end
 
 if _G.useadminscript == true then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end
 
 if _G.graphicsenhancer == true then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/GraphicsEnhancer.lua'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/GraphicsEnhancer.lua'))()
 end
 
 if _G.fpsbooster == true then
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/FPSBooster.lua'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/FPSBooster.lua'))()
+end
+
+if _G.inlinechatspy == true or nil then
+	loadstring(game:HttpGet("https://github.com/slash1div/slash1div/raw/main/ROBLOX/autoexecute/unified-scripts/chat-spy.lua", true))()
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/AutoTranslate.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/slash1div/slash1div/main/ROBLOX/autoexecute/unified-scripts/DiscordEmojis.lua", true))()
-loadstring(game:HttpGet("https://github.com/slash1div/slash1div/raw/main/ROBLOX/autoexecute/unified-scripts/chat-spy.lua", true))()
 game.CoreGui.ThemeProvider.TopBarFrame.LeftFrame.Button.Visible = False -- i hate the beta badge, it covers some game guis. this removes it.
