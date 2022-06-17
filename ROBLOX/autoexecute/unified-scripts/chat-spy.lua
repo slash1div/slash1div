@@ -1,19 +1,21 @@
--- Made by xaxa420
+-- Made by xaxa420, Fixed by me (slash1div)
 --    https://v3rmillion.net/showthread.php?tid=1074147
 
 local Players, SGui = game:GetService("Players"), game:GetService("StarterGui");
 local Client, NColor3, UD, UD2 = Players.LocalPlayer, Color3.new, UDim.new, UDim2.new
 
-getgenv().ShowHiddenMsg = function(T, C)
+getgenv().ShowHiddenMsg = function(T)
    SGui:SetCore("ChatMakeSystemMessage", {
        Text = T;
-       Color = C;
+       Color = Color3.new(1,1,0); -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
+       Font = Enum.Font.SourceSansLight;
+       TextSize = 16;
    })
 end
 getgenv().Spy = function(Target)
    Target.Chatted:Connect(function(Msg)
        if string.sub(Msg, 1,2) == "/e" or string.sub(Msg,1,2) == "/w"  or string.sub(Msg,1,2) == "/t" or string.sub(Msg,1,8) == "/console" or string.sub(Msg,1,5) == "/team" or string.sub(Msg,1,8) == "/whisper" then
-           ShowHiddenMsg("{CHATSPY}: ".."["..tostring(Target).."]: "..Msg, NColor3(255,255,255)) -- https://www.rapidtables.com/web/color/RGB_Color.html if you want to change the color of the hidden msg's
+           ShowHiddenMsg("{CHATSPY}: ".."["..tostring(Target).."]: "..Msg)
        end
    end)
 end
