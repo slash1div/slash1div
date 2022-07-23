@@ -540,6 +540,7 @@ function Library:CreateMain()
 		Game.TextXAlignment = Enum.TextXAlignment.Left
 		Game.TextYAlignment = Enum.TextYAlignment.Top
 		TextButton.Parent = Game
+		TextButton.Name = "Join".. v
 		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton.Position = UDim2.new(0.843333304, 0, 0.166666672, 0)
 		TextButton.Size = UDim2.new(0, 30, 0, 11)
@@ -548,6 +549,7 @@ function Library:CreateMain()
 		TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 		TextButton.TextSize = 12.000
 		TextButton_2.Parent = Game
+		TextButton_2.Name = "Copy".. v
 		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton_2.Position = UDim2.new(0.653333306, 0, 0.166666672, 0)
 		TextButton_2.Size = UDim2.new(0, 51, 0, 11)
