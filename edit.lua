@@ -245,7 +245,7 @@ function Library:Createmain()
 	Welcome.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
 	Welcome.ScrollBarThickness = 5
 	Welcome.ScrollingEnabled = false
-	Logo.Name = "Logo"
+	Logo.Name = "!Logo"
 	Logo.Parent = Welcome
 	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Logo.BackgroundTransparency = 1.000
@@ -327,7 +327,7 @@ function Library:Createmain()
 	Changes.TextYAlignment = Enum.TextYAlignment.Top
 	UIListLayout.Parent = Welcome
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.SortOrder = Enum.SortOrder.Name
 	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 	UIListLayout.Padding = UDim.new(0, 15)
 	Support.Name = "Support"
@@ -613,11 +613,11 @@ function Library:Createmain()
 	end
 
 	Welcome_2.MouseButton1Click:Connect(function()
-		self:SelectPage("Welcome")
+		PageLibrary:SelectPage("Welcome")
 	end)
 
 	Support_2.MouseButton1Click:Connect(function()
-		self:SelectPage("Support")
+		PageLibrary:SelectPage("Support")
 	end)
 
 	function PageLibrary:NewPage(Name, ImageID)
