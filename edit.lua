@@ -557,7 +557,7 @@ function Library:Createmain()
 					guiInternalConfig.GuiClosed = true
 					guiInternalConfig.CanOpenClose = false
 					guiInternalConfig.GuiPos = Dragify.Position
-					Dragify:TweenPosition(UDim2.new(-1,0,-1,0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
+					Dragify:TweenPosition(UDim2.new(0,-300, 0,-300),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
 					task.wait(0.3)
 					guiInternalConfig.CanOpenClose = true
 				elseif guiInternalConfig.GuiClosed == true and guiInternalConfig.CanOpenClose then
