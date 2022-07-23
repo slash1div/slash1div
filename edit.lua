@@ -558,7 +558,7 @@ function Library:CreateMain()
 		TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 		TextButton_2.TextSize = 12.000
 		TextButton.MouseButton1Down:connect(function()
-			game:GetService("TeleportService"):Teleport(v, game:GetService("Players").LocalPlayer)
+			game:GetService("TeleportService"):Teleport(tonumber(v), game:GetService("Players").LocalPlayer)
 		end)
 		TextButton_2.MouseButton1Down:connect(function()
 			setclipboard("https://www.roblox.com/games/".. v)
