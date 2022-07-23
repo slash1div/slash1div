@@ -520,7 +520,7 @@ function Library:CreateMain()
 		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
 	end
 
-	for _,v in pairs(_G.SupportedGames) do
+	for _,v in pairs(_G.supportedGameList) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
 		local TextButton_2 = Instance.new("TextButton")
