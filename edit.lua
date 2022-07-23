@@ -514,13 +514,13 @@ function Library:CreateMain()
 
 	--Scripting
 
-	if isGameSupported(_G.supportedGameList) then
+	if isGameSupported(_G.SupportedGames) then
 		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
 	else
 		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
 	end
 
-	for _,v in pairs(_G.supportedGameList) do
+	for _,v in pairs(_G.SupportedGames) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
 		local TextButton_2 = Instance.new("TextButton")
