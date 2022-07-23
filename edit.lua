@@ -1,6 +1,6 @@
 -- Settings
 
-getgenv().SupportedGames = { 8278412720, 292439477, 286090429, 6055959032 }
+_G.SupportedGames = { 8278412720, 292439477, 286090429, 6055959032 }
 
 local guiConfig = {
 	versionNumber = "1.0.0", -- The current version of the gui
@@ -514,13 +514,13 @@ function Library:CreateMain()
 
 	--Scripting
 
-	if isGameSupported(getgenv().supportedGameList) then
+	if isGameSupported(_G.supportedGameList) then
 		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
 	else
 		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
 	end
 
-	for _,v in pairs(getgenv().SupportedGames) do
+	for _,v in pairs(_G.SupportedGames) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
 		local TextButton_2 = Instance.new("TextButton")
