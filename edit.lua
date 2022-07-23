@@ -553,19 +553,19 @@ function Library:Createmain()
 	game:GetService("UserInputService").InputBegan:Connect(function(key, gp)
 		if key.KeyCode == guiConfig.keybind then
 			if game:GetService("UserInputService"):GetFocusedTextBox() == nil then
-				if guiConfig.GuiClosed == false and guiConfig.CanOpenClose and dragToggle ~= true then
-					guiConfig.GuiClosed = true
-					guiConfig.CanOpenClose = false
-					guiConfig.GuiPos = Dragify.Position
+				if guiInternalConfig.GuiClosed == false and guiInternalConfig.CanOpenClose and dragToggle ~= true then
+					guiInternalConfig.GuiClosed = true
+					guiInternalConfig.CanOpenClose = false
+					guiInternalConfig.GuiPos = Dragify.Position
 					Dragify:TweenPosition(UDim2.new(-1,0,-1,0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
 					task.wait(0.3)
-					guiConfig.CanOpenClose = true
-				elseif guiConfig.GuiClosed == true and guiConfig.CanOpenClose then
-					guiConfig.GuiClosed = false
-					guiConfig.CanOpenClose = false
-					Dragify:TweenPosition(guiConfig.GuiPos,Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
+					guiInternalConfig.CanOpenClose = true
+				elseif guiInternalConfig.GuiClosed == true and guiInternalConfig.CanOpenClose then
+					guiInternalConfig.GuiClosed = false
+					guiInternalConfig.CanOpenClose = false
+					Dragify:TweenPosition(guiInternalConfig.GuiPos,Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
 					task.wait(0.3)
-					guiConfig.CanOpenClose = true
+					guiInternalConfig.CanOpenClose = true
 				end
 			end
 		end
@@ -573,26 +573,26 @@ function Library:Createmain()
 
 	-- Gui Minimize/Maximize Button.
 	MinMax.MouseButton1Down:connect(function()
-		if guiConfig.GuiMaximized == false and guiConfig.CanMinimize then
-			guiConfig.GuiMaximized = true
-			guiConfig.CanMinimize = false
+		if guiInternalConfig.GuiMaximized == false and guiInternalConfig.CanMinimize then
+			guiInternalConfig.GuiMaximized = true
+			guiInternalConfig.CanMinimize = false
 			MinMax.Text = "-"
 			Bottom.Visible = true
 			Back.Visible = true
 			Back:TweenSize(UDim2.new(0, 600, 0, 278),Enum.EasingDirection.Out,Enum.EasingStyle.Sine,0.3,false)
 			task.wait(0.4)
 			Main.Visible = true
-			guiConfig.CanMinimize = true
-		elseif guiConfig.GuiMaximized == true and guiConfig.CanMinimize then
-			guiConfig.GuiMaximized = false
-			guiConfig.CanMinimize = false
+			guiInternalConfig.CanMinimize = true
+		elseif guiInternalConfig.GuiMaximized == true and guiInternalConfig.CanMinimize then
+			guiInternalConfig.GuiMaximized = false
+			guiInternalConfig.CanMinimize = false
 			MinMax.Text = "+"
 			Main.Visible = false
 			Back:TweenSize(UDim2.new(0, 600, 0, 13),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
 			task.wait(0.4)
 			Back.Visible = false
 			Bottom.Visible = false
-			guiConfig.CanMinimize = true
+			guiInternalConfig.CanMinimize = true
 		end
 	end)
 
