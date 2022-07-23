@@ -819,7 +819,7 @@ function Library:CreateMain()
 			Toggle.TextSize = 14.000
 			UICorner_255.CornerRadius = UDim.new(1, 0)
 			UICorner_255.Parent = Toggle
-			ElementToggle.MouseButton1Click:Connect(function()
+			Toggle.MouseButton1Click:Connect(function()
 				if active then
 					active = false
 					Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
