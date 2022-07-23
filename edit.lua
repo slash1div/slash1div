@@ -86,7 +86,7 @@ end
 -- Main Gui
 local Library = {}
 
-function Library:Createmain()
+function Library:CreateMain()
 	-- hhghg
 	local GUI = Instance.new("ScreenGui")
 	local Dragify = Instance.new("Frame")
