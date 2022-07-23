@@ -4,7 +4,7 @@ _G.SupportedGames = { 8278412720, 292439477, 286090429, 6055959032 }
 
 local guiConfig = {
 	versionNumber = "1.0.0", -- The current version of the gui
-	changelogText = "-Test\n\n-Test2", -- Changelog text: \n for new line, \" for double quotes, \[ for left squard bracket, and \] for right square bracket
+	changelogText = "-Created a UI Library\n\n-Made the game scripts\n\n-Severe depression", -- Changelog text: \n for new line, \" for double quotes, \[ for left squard bracket, and \] for right square bracket
 
 	keybind = Enum.KeyCode.Z, -- The open and close gui keybind. Default: Enum.KeyCode.Z
 };
