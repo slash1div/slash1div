@@ -613,11 +613,11 @@ function Library:Createmain()
 	end
 
 	Welcome_2.MouseButton1Click:Connect(function()
-		self:SelectPage("Welcome", true)
+		self:SelectPage("Welcome")
 	end)
 
 	Support_2.MouseButton1Click:Connect(function()
-		self:SelectPage("Support", true)
+		self:SelectPage("Support")
 	end)
 
 	function PageLibrary:NewPage(Name, ImageID)
@@ -675,7 +675,7 @@ function Library:Createmain()
 		Text_4.TextXAlignment = Enum.TextXAlignment.Left
 		UICorner_7.Parent = Support_3
 		Support_3.MouseButton1Click:Connect(function()
-			self:SelectPage(Name, true)
+			self:SelectPage(Name)
 		end)
 	end
 	return PageLibrary;
