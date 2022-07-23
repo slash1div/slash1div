@@ -1,11 +1,12 @@
 -- Settings
 
+getgenv().SupportedGames = { 8278412720, 292439477, 286090429, 6055959032 }
+
 local guiConfig = {
 	versionNumber = "1.0.0", -- The current version of the gui
 	changelogText = "-Test\n\n-Test2", -- Changelog text: \n for new line, \" for double quotes, \[ for left squard bracket, and \] for right square bracket
 
 	keybind = Enum.KeyCode.Z, -- The open and close gui keybind. Default: Enum.KeyCode.Z
-	supportedGameList = { 8278412720, 292439477, 286090429, 6055959032 }
 };
 
 local guiInternalConfig = {
@@ -515,7 +516,7 @@ function Library:CreateMain()
 	UICorner_9.Parent = MinMax
 
 	--Scripting
-	for _,v in pairs(guiConfig.SupportedGames) do
+	for _,v in pairs(getgenv().SupportedGames) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
 		local TextButton_2 = Instance.new("TextButton")
@@ -554,7 +555,6 @@ function Library:CreateMain()
 			game:GetService("TeleportService"):Teleport(v, game:GetService("Players").LocalPlayer)
 		end)
 		TextButton_2.MouseButton1Down:connect(function()
-			---@diagnostic disable-next-line: undefined-global
 			setclipboard("https://www.roblox.com/games/".. v)
 		end)
 	end
