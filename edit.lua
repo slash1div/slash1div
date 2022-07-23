@@ -908,6 +908,7 @@ function Library:CreateMain()
 				end)
 			end)
 		end
+		return ElementLibrary;
 	end
 	return PageLibrary;
 end
