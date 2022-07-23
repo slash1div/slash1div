@@ -4,7 +4,8 @@ local guiConfig = {
 	versionNumber = "1.0.0", -- The current version of the gui
 	changelogText = "-Test\n\n-Test2", -- Changelog text: \n for new line, \" for double quotes, \[ for left squard bracket, and \] for right square bracket
 
-	keybind = Enum.KeyCode.Z -- The open and close gui keybind. Default: Enum.KeyCode.Z
+	keybind = Enum.KeyCode.Z, -- The open and close gui keybind. Default: Enum.KeyCode.Z
+	supportedGameList = { 8278412720, 292439477, 286090429, 6055959032 }
 };
 
 local guiInternalConfig = {
@@ -121,9 +122,6 @@ function Library:Createmain()
 	local Label_3 = Instance.new("TextLabel")
 	local Line = Instance.new("TextLabel")
 	local UIListLayout_4 = Instance.new("UIListLayout")
-	local Game = Instance.new("TextLabel")
-	local TextButton = Instance.new("TextButton")
-	local TextButton_2 = Instance.new("TextButton")
 	local TextButton_3 = Instance.new("TextButton")
 	local Sidebar = Instance.new("ScrollingFrame")
 	local UIListLayout_5 = Instance.new("UIListLayout")
@@ -141,7 +139,6 @@ function Library:Createmain()
 	local UICorner_8 = Instance.new("UICorner")
 	local MinMax = Instance.new("TextButton")
 	local UICorner_9 = Instance.new("UICorner")
-
 
 	--Properties:
 	GUI.Name = "GUI"
@@ -355,9 +352,14 @@ function Library:Createmain()
 	Warning.Position = UDim2.new(0, 0, 0.0431034453, 0)
 	Warning.Size = UDim2.new(0, 450, 0, 27)
 	Warning.Font = Enum.Font.GothamBold
-	Warning.Text = string.format("Support & Games List\nThis game is not supported.")
+	if isGameSupported(guiConfig.supportedGameList) then
+		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
+	else
+		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
+	end
 	Warning.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Warning.TextSize = 16.000
+	Warning.TextScaled = true
 	Warning.TextStrokeTransparency = 0.000
 	Warning.TextWrapped = true
 	SupportedGames.Name = "SupportedGames"
@@ -392,37 +394,6 @@ function Library:Createmain()
 	UIListLayout_4.Parent = SupportedGames
 	UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
 	UIListLayout_4.Padding = UDim.new(0, 3)
-	Game.Name = "Game"
-	Game.Parent = SupportedGames
-	Game.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-	Game.BackgroundTransparency = 1.000
-	Game.BorderColor3 = Color3.fromRGB(54, 54, 54)
-	Game.BorderSizePixel = 0
-	Game.Position = UDim2.new(0, 0, 0.199666753, 0)
-	Game.Size = UDim2.new(0, 300, 0, 18)
-	Game.Font = Enum.Font.SourceSans
-	Game.Text = "   Gamename"
-	Game.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Game.TextSize = 14.000
-	Game.TextStrokeTransparency = 0.800
-	Game.TextXAlignment = Enum.TextXAlignment.Left
-	Game.TextYAlignment = Enum.TextYAlignment.Top
-	TextButton.Parent = Game
-	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.Position = UDim2.new(0.843333304, 0, 0.166666672, 0)
-	TextButton.Size = UDim2.new(0, 30, 0, 11)
-	TextButton.Font = Enum.Font.SourceSans
-	TextButton.Text = "Join"
-	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TextButton.TextSize = 12.000
-	TextButton_2.Parent = Game
-	TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton_2.Position = UDim2.new(0.653333306, 0, 0.166666672, 0)
-	TextButton_2.Size = UDim2.new(0, 51, 0, 11)
-	TextButton_2.Font = Enum.Font.SourceSans
-	TextButton_2.Text = "Copy Link"
-	TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-	TextButton_2.TextSize = 12.000
 	TextButton_3.Parent = Support
 	TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
 	TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -543,8 +514,50 @@ function Library:Createmain()
 	MinMax.TextWrapped = true
 	UICorner_9.Parent = MinMax
 
-
 	--Scripting
+	for _,v in pairs(guiConfig.SupportedGames) do
+		local Game = Instance.new("TextLabel")
+		local TextButton = Instance.new("TextButton")
+		local TextButton_2 = Instance.new("TextButton")
+		Game.Name = "Game"
+		Game.Parent = SupportedGames
+		Game.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+		Game.BackgroundTransparency = 1.000
+		Game.BorderColor3 = Color3.fromRGB(54, 54, 54)
+		Game.BorderSizePixel = 0
+		Game.Position = UDim2.new(0, 0, 0.199666753, 0)
+		Game.Size = UDim2.new(0, 300, 0, 18)
+		Game.Font = Enum.Font.SourceSans
+		Game.Text = "   ".. game:GetService("MarketplaceService"):GetProductInfo(v).Name
+		Game.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Game.TextSize = 14.000
+		Game.TextStrokeTransparency = 0.800
+		Game.TextXAlignment = Enum.TextXAlignment.Left
+		Game.TextYAlignment = Enum.TextYAlignment.Top
+		TextButton.Parent = Game
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton.Position = UDim2.new(0.843333304, 0, 0.166666672, 0)
+		TextButton.Size = UDim2.new(0, 30, 0, 11)
+		TextButton.Font = Enum.Font.SourceSans
+		TextButton.Text = "Join"
+		TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		TextButton.TextSize = 12.000
+		TextButton_2.Parent = Game
+		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TextButton_2.Position = UDim2.new(0.653333306, 0, 0.166666672, 0)
+		TextButton_2.Size = UDim2.new(0, 51, 0, 11)
+		TextButton_2.Font = Enum.Font.SourceSans
+		TextButton_2.Text = "Copy Link"
+		TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+		TextButton_2.TextSize = 12.000
+		TextButton.MouseButton1Down:connect(function()
+			game:GetService("TeleportService"):Teleport(v, game:GetService("Players").LocalPlayer)
+		end)
+		TextButton_2.MouseButton1Down:connect(function()
+			---@diagnostic disable-next-line: undefined-global
+			setclipboard("https://www.roblox.com/games/".. v)
+		end)
+	end
 
 	-- Dragifiys the actual gui.
 	dragify(Dragify)
