@@ -353,11 +353,7 @@ function Library:CreateMain()
 	Warning.Position = UDim2.new(0, 0, 0.0431034453, 0)
 	Warning.Size = UDim2.new(0, 450, 0, 27)
 	Warning.Font = Enum.Font.GothamBold
-	if isGameSupported(guiConfig.supportedGameList) then
-		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
-	else
-		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
-	end
+	Warning.Text = "Loading.."
 	Warning.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Warning.TextSize = 16.000
 	Warning.TextScaled = true
@@ -515,7 +511,15 @@ function Library:CreateMain()
 	MinMax.TextWrapped = true
 	UICorner_9.Parent = MinMax
 
+	
 	--Scripting
+
+	if isGameSupported(getgenv().supportedGameList) then
+		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
+	else
+		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
+	end
+
 	for _,v in pairs(getgenv().SupportedGames) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
