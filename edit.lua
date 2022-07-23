@@ -355,7 +355,7 @@ function Library:Createmain()
 	Warning.Position = UDim2.new(0, 0, 0.0431034453, 0)
 	Warning.Size = UDim2.new(0, 450, 0, 27)
 	Warning.Font = Enum.Font.GothamBold
-	Warning.Text = string.format("Support & Games List\\nThis game is not supported.")
+	Warning.Text = string.format("Support & Games List\nThis game is not supported.")
 	Warning.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Warning.TextSize = 16.000
 	Warning.TextStrokeTransparency = 0.000
