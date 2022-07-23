@@ -84,9 +84,10 @@ function recolorGui()
 end
 
 
--- Main Gui
+--- Main Gui handler.
 local Library = {}
 
+--- Creates the actual UI.
 function Library:CreateMain()
 	-- hhghg
 	local GUI = Instance.new("ScreenGui")
@@ -514,12 +515,14 @@ function Library:CreateMain()
 
 	--Scripting
 
+	-- Shows if the game is supported inside of the support page
 	if isGameSupported(_G.SupportedGames) then
 		Warning.Text = string.format("Support & Games List\nThis current game is supported!")
 	else
 		Warning.Text = string.format("Support & Games List\nThis game is not supported.")
 	end
 
+	--- Creates the games list in the support page.
 	for _,v in pairs(_G.SupportedGames) do
 		local Game = Instance.new("TextLabel")
 		local TextButton = Instance.new("TextButton")
@@ -620,8 +623,11 @@ function Library:CreateMain()
 		GUI:Destroy()
 	end)
 
+	--- The handler for the pages inside of the UI.
 	local PageLibrary = {}
 
+	--- Selects a page based on the name
+	---@param pageName string The name of the page.
 	function PageLibrary:SelectPage(pageName)
 		for i,Child in pairs(Pages:GetChildren()) do
 			if Child:IsA("GuiObject") then
@@ -638,7 +644,10 @@ function Library:CreateMain()
 	Support_2.MouseButton1Click:Connect(function()
 		PageLibrary:SelectPage("Support")
 	end)
-
+	
+	--- Creates a new page inside of the UI.
+	---@param Name string The name of the page.
+	---@param ImageID boolean The icon of the page (Decal image ID)
 	function PageLibrary:NewPage(Name, ImageID)
 		local Test = Instance.new("ScrollingFrame")
 		local UIListLayout_2 = Instance.new("UIListLayout")
