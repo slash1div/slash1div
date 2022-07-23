@@ -20,11 +20,6 @@ local guiInternalConfig = {
 }
 
 
--- Variables
-
-local test = "test"
-
-
 -- Functions
 
 --- Allows a frame to be dragged.
@@ -89,6 +84,9 @@ local Library = {}
 
 --- Creates the actual UI.
 function Library:CreateMain()
+	if game.CoreGui:FindFirstChild("ParanormalUI") then
+		game.CoreGui:FindFirstChild("ParanormalUI"):Destroy()
+  	end
 	-- hhghg
 	local GUI = Instance.new("ScreenGui")
 	local Dragify = Instance.new("Frame")
@@ -144,7 +142,7 @@ function Library:CreateMain()
 
 	--Properties:
 	GUI.Name = "GUI"
-	GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	GUI.Parent = game.CoreGui
 	GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Dragify.Name = "Dragify"
 	Dragify.Parent = GUI
@@ -649,29 +647,30 @@ function Library:CreateMain()
 	---@param Name string The name of the page.
 	---@param ImageID boolean The icon of the page (Decal image ID)
 	function PageLibrary:NewPage(Name, ImageID)
-		local Test = Instance.new("ScrollingFrame")
+		local newPage = Instance.new("ScrollingFrame")
 		local UIListLayout_2 = Instance.new("UIListLayout")
 		local UIPadding = Instance.new("UIPadding")
 		local Support_3 = Instance.new("TextButton")
 		local Image_3 = Instance.new("ImageLabel")
 		local Text_4 = Instance.new("TextLabel")
 		local UICorner_7 = Instance.new("UICorner")
-		Test.Name = Name
-		Test.Parent = Pages
-		Test.Active = true
-		Test.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-		Test.BackgroundTransparency = 1.000
-		Test.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Test.Position = UDim2.new(0.166999996, 0, 0.996999979, 0)
-		Test.Size = UDim2.new(0, 500, 0, 265)
-		Test.Visible = false
-		Test.ScrollBarThickness = 5
-		UIListLayout_2.Parent = Test
+		newPage.Name = Name
+		newPage.Parent = Pages
+		newPage.Active = true
+		newPage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		newPage.BackgroundTransparency = 1.000
+		newPage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		newPage.Position = UDim2.new(0.166999996, 0, 0.996999979, 0)
+		newPage.Size = UDim2.new(0, 500, 0, 265)
+		newPage.Visible = false
+		newPage.ScrollBarThickness = 5
+		UIListLayout_2.Parent = newPage
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 		UIListLayout_2.Padding = UDim.new(0, 10)
-		UIPadding.Parent = Test
+		UIPadding.Parent = newPage
 		UIPadding.PaddingTop = UDim.new(0, 10)
+		UIPadding.PaddingRight = UDim.new(0, 2)
 		Support_3.Name = Name
 		Support_3.Parent = Sidebar
 		Support_3.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
@@ -706,6 +705,209 @@ function Library:CreateMain()
 		Support_3.MouseButton1Click:Connect(function()
 			self:SelectPage(Name)
 		end)
+
+		local ElementLibrary = {}
+
+		function ElementLibrary:CreateButton(name, callback)
+			name = name or "Text Button"
+			callback = callback or function() end
+			local ElementButton = Instance.new("TextButton")
+			local UICorner5555 = Instance.new("UICorner")
+			ElementButton.Name = name
+			ElementButton.Parent = newPage
+			ElementButton.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			ElementButton.Position = UDim2.new(0.0199999996, 0, 0, 0)
+			ElementButton.Size = UDim2.new(0, 475, 0, 35)
+			ElementButton.Font = Enum.Font.Gotham
+			ElementButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			ElementButton.TextSize = 14.000
+			ElementButton.TextWrapped = true
+			ElementButton.Text = name
+			UICorner5555.Parent = ElementButton
+			ElementButton.MouseButton1Click:Connect(function()
+				callback()
+			end)
+		end
+
+		function ElementLibrary:CreateTextbox(name, callback)
+			name = name or "Text Box"
+			callback = callback or function() end
+			local ElementTextBox = Instance.new("Frame")
+			local Submit = Instance.new("TextButton")
+			local UICorner22 = Instance.new("UICorner")
+			local Icon = Instance.new("ImageLabel")
+			local TextBox = Instance.new("TextBox")
+			local UICorner_2333 = Instance.new("UICorner")
+			local UICorner_3333 = Instance.new("UICorner")
+			ElementTextBox.Name = name
+			ElementTextBox.Parent = newPage
+			ElementTextBox.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			ElementTextBox.BorderSizePixel = 0
+			ElementTextBox.Size = UDim2.new(0, 475, 0, 35)
+			Submit.Name = "Submit"
+			Submit.Parent = ElementTextBox
+			Submit.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			Submit.BorderColor3 = Color3.fromRGB(27, 42, 53)
+			Submit.BorderSizePixel = 0
+			Submit.Position = UDim2.new(0, 440, 0, 0)
+			Submit.Size = UDim2.new(0, 35, 0, 35)
+			Submit.Font = Enum.Font.SourceSans
+			Submit.Text = ""
+			Submit.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Submit.TextSize = 14.000
+			Submit.TextTransparency = 1.000
+			UICorner22.Parent = Submit
+			Icon.Name = "Icon"
+			Icon.Parent = ElementTextBox
+			Icon.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(0, 445, 0, 5)
+			Icon.Size = UDim2.new(0, 25, 0, 25)
+			Icon.Image = "rbxassetid://1510598093"
+			TextBox.Parent = ElementTextBox
+			TextBox.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+			TextBox.BorderSizePixel = 0
+			TextBox.Size = UDim2.new(0, 435, 0, 35)
+			TextBox.Font = Enum.Font.Gotham
+			TextBox.PlaceholderText = name
+			TextBox.Text = ""
+			TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+			TextBox.TextSize = 14.000
+			UICorner_2333.Parent = TextBox
+			UICorner_3333.Parent = ElementTextBox
+			Submit.MouseButton1Click:Connect(function()
+				callback(TextBox.Text)
+			end)
+		end
+
+		function ElementLibrary:CreateToggle(name, callback)
+			name = name or "Toggle"
+			callback = callback or function() end
+			local active = false
+			local ElementToggle = Instance.new("Frame")
+			local UICorner_25677 = Instance.new("UICorner")
+			local ToggleLabel = Instance.new("TextLabel")
+			local Toggle = Instance.new("TextButton")
+			local UICorner_255 = Instance.new("UICorner")
+			ElementToggle.Name = "ElementToggle"
+			ElementToggle.Parent = newPage
+			ElementToggle.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			ElementToggle.BorderSizePixel = 0
+			ElementToggle.Size = UDim2.new(0, 475, 0, 35)
+			UICorner_25677.Parent = ElementToggle
+			ToggleLabel.Name = "ToggleLabel"
+			ToggleLabel.Parent = ElementToggle
+			ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ToggleLabel.BackgroundTransparency = 1.000
+			ToggleLabel.Position = UDim2.new(0, 40, 0, 0)
+			ToggleLabel.Size = UDim2.new(0, 435, 0, 35)
+			ToggleLabel.Font = Enum.Font.Gotham
+			ToggleLabel.Text = "Toggle"
+			ToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+			ToggleLabel.TextSize = 14.000
+			ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+			Toggle.Name = "Toggle"
+			Toggle.Parent = ElementToggle
+			Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+			Toggle.BorderSizePixel = 0
+			Toggle.Position = UDim2.new(0, 5, 0, 5)
+			Toggle.Size = UDim2.new(0, 25, 0, 25)
+			Toggle.Font = Enum.Font.SourceSans
+			Toggle.Text = ""
+			Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Toggle.TextSize = 14.000
+			UICorner_255.CornerRadius = UDim.new(1, 0)
+			UICorner_255.Parent = Toggle
+			ElementToggle.MouseButton1Click:Connect(function()
+				if active then
+					active = false
+					Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+					callback(false)
+				elseif not active then
+					active = true
+					Toggle.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+					callback(true)
+				end
+			end)
+		end
+
+		function ElementLibrary:CreateSlider(name, minvalue, maxvalue, callback)
+			name = name or "Toggle"
+			callback = callback or function() end
+			minvalue = minvalue or 0
+			maxvalue = maxvalue or 100
+			local mouse = game.Players.LocalPlayer:GetMouse()
+			local uis = game:GetService("UserInputService")
+			local Value;
+			local ElementSlider = Instance.new("Frame")
+			local UICorner445565 = Instance.new("UICorner")
+			local SliderLabel = Instance.new("TextLabel")
+			local SliderBtn = Instance.new("TextButton")
+			local SlideInner = Instance.new("Frame")
+			ElementSlider.Name = "ElementSlider"
+			ElementSlider.Parent = game.StarterGui.GUI
+			ElementSlider.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+			ElementSlider.BorderSizePixel = 0
+			ElementSlider.Size = UDim2.new(0, 475, 0, 35)
+			UICorner445565.Parent = ElementSlider
+			SliderLabel.Name = "SliderLabel"
+			SliderLabel.Parent = ElementSlider
+			SliderLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			SliderLabel.BackgroundTransparency = 1.000
+			SliderLabel.Position = UDim2.new(0.0210526325, 0, 0.0571428575, 0)
+			SliderLabel.Size = UDim2.new(0, 80, 0, 15)
+			SliderLabel.Font = Enum.Font.Gotham
+			SliderLabel.Text = "Slider"
+			SliderLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+			SliderLabel.TextSize = 14.000
+			SliderLabel.TextStrokeTransparency = 0.000
+			SliderLabel.TextWrapped = true
+			SliderLabel.TextXAlignment = Enum.TextXAlignment.Left
+			SliderBtn.Name = "SliderBtn"
+			SliderBtn.Parent = ElementSlider
+			SliderBtn.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+			SliderBtn.BorderSizePixel = 0
+			SliderBtn.Position = UDim2.new(0, 0, 0, 20)
+			SliderBtn.Size = UDim2.new(0, 475, 0, 15)
+			SliderBtn.Font = Enum.Font.SourceSans
+			SliderBtn.Text = " "
+			SliderBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+			SliderBtn.TextSize = 14.000
+			SlideInner.Name = "SlideInner"
+			SlideInner.Parent = SliderBtn
+			SlideInner.BackgroundColor3 = Color3.fromRGB(255, 153, 0)
+			SlideInner.BorderSizePixel = 0
+			SlideInner.Size = UDim2.new(0, 0, 0, 15)
+			SliderBtn.MouseButton1Down:Connect(function()
+				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 475) * SlideInner.AbsoluteSize.X) + tonumber(minvalue)) or 0
+				pcall(function()
+					callback(Value)
+				end)
+				SlideInner.Size = UDim2.new(0, math.clamp(mouse.X - SlideInner.AbsolutePosition.X, 0, 475), 0, 16)
+				---@diagnostic disable-next-line: undefined-global
+				moveconnection = mouse.Move:Connect(function()
+					SliderLabel.Text = (name.. ": ".. Value)
+					Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 475) * SlideInner.AbsoluteSize.X) + tonumber(minvalue))
+					pcall(function()
+						callback(Value)
+					end)
+					SlideInner.Size = UDim2.new(0, math.clamp(mouse.X - SlideInner.AbsolutePosition.X, 0, 475), 0, 16)
+				end)
+				---@diagnostic disable-next-line: undefined-global
+				releaseconnection = uis.InputEnded:Connect(function(Mouse)
+					if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+						Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 475) * SlideInner.AbsoluteSize.X) + tonumber(minvalue))
+						pcall(function()
+							callback(Value)
+						end)
+						SlideInner.Size = UDim2.new(0, math.clamp(mouse.X - SlideInner.AbsolutePosition.X, 0, 475), 0, 16)
+						moveconnection:Disconnect()
+						releaseconnection:Disconnect()
+					end
+				end)
+			end)
+		end
 	end
 	return PageLibrary;
 end
