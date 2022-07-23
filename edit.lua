@@ -243,7 +243,7 @@ function Library:Createmain()
 	Welcome.Position = UDim2.new(0.166999996, 0, 0.996999979, 0)
 	Welcome.Size = UDim2.new(0, 500, 0, 265)
 	Welcome.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
-	Welcome.ScrollBarThickness = 5
+	Welcome.ScrollBarThickness = 0
 	Welcome.ScrollingEnabled = false
 	Logo.Name = "!Logo"
 	Logo.Parent = Welcome
@@ -340,7 +340,7 @@ function Library:Createmain()
 	Support.Size = UDim2.new(0, 500, 0, 265)
 	Support.Visible = false
 	Support.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
-	Support.ScrollBarThickness = 5
+	Support.ScrollBarThickness = 0
 	Support.ScrollingEnabled = false
 	UIListLayout_3.Parent = Support
 	UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -573,26 +573,26 @@ function Library:Createmain()
 
 	-- Gui Minimize/Maximize Button.
 	MinMax.MouseButton1Down:connect(function()
-		if GuiMaximized == false and CanMinimize then
-			GuiMaximized = true 
-			CanMinimize = false
+		if guiConfig.GuiMaximized == false and guiConfig.CanMinimize then
+			guiConfig.GuiMaximized = true
+			guiConfig.CanMinimize = false
 			MinMax.Text = "-"
 			Bottom.Visible = true
 			Back.Visible = true
 			Back:TweenSize(UDim2.new(0, 600, 0, 278),Enum.EasingDirection.Out,Enum.EasingStyle.Sine,0.3,false)
 			task.wait(0.4)
 			Main.Visible = true
-			CanMinimize = true
-		elseif GuiMaximized == true and CanMinimize then
-			GuiMaximized = false
-			CanMinimize = false
+			guiConfig.CanMinimize = true
+		elseif guiConfig.GuiMaximized == true and guiConfig.CanMinimize then
+			guiConfig.GuiMaximized = false
+			guiConfig.CanMinimize = false
 			MinMax.Text = "+"
 			Main.Visible = false
 			Back:TweenSize(UDim2.new(0, 600, 0, 13),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,false)
 			task.wait(0.4)
 			Back.Visible = false
 			Bottom.Visible = false
-			CanMinimize = true
+			guiConfig.CanMinimize = true
 		end
 	end)
 
@@ -637,6 +637,7 @@ function Library:Createmain()
 		Test.Position = UDim2.new(0.166999996, 0, 0.996999979, 0)
 		Test.Size = UDim2.new(0, 500, 0, 265)
 		Test.Visible = false
+		Test.ScrollBarThickness = 5
 		UIListLayout_2.Parent = Test
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
