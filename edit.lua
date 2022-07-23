@@ -355,7 +355,7 @@ function Library:Createmain()
 	Warning.Position = UDim2.new(0, 0, 0.0431034453, 0)
 	Warning.Size = UDim2.new(0, 450, 0, 27)
 	Warning.Font = Enum.Font.GothamBold
-	Warning.Text = "Support & Games List\\nThis game is not supported."
+	Warning.Text = string.format("Support & Games List\\nThis game is not supported.")
 	Warning.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Warning.TextSize = 16.000
 	Warning.TextStrokeTransparency = 0.000
@@ -429,7 +429,7 @@ function Library:Createmain()
 	TextButton_3.Position = UDim2.new(0.34799999, 0, 0.862264156, 0)
 	TextButton_3.Size = UDim2.new(0, 150, 0, 20)
 	TextButton_3.Font = Enum.Font.Gotham
-	TextButton_3.Text = "Roblox Group"
+	TextButton_3.Text = "Discord Server"
 	TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 	TextButton_3.TextSize = 14.000
 	Sidebar.Name = "Sidebar"
