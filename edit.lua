@@ -839,14 +839,14 @@ function Library:CreateMain()
 			maxvalue = maxvalue or 100
 			local mouse = game.Players.LocalPlayer:GetMouse()
 			local uis = game:GetService("UserInputService")
-			local Value;
+			local Value = minvalue
 			local ElementSlider = Instance.new("Frame")
 			local UICorner445565 = Instance.new("UICorner")
 			local SliderLabel = Instance.new("TextLabel")
 			local SliderBtn = Instance.new("TextButton")
 			local SlideInner = Instance.new("Frame")
 			ElementSlider.Name = "ElementSlider"
-			ElementSlider.Parent = game.StarterGui.GUI
+			ElementSlider.Parent = newPage
 			ElementSlider.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
 			ElementSlider.BorderSizePixel = 0
 			ElementSlider.Size = UDim2.new(0, 475, 0, 35)
